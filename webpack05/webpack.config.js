@@ -14,6 +14,12 @@ module.exports = {
         exclude: __dirname + 'node_modules', 
         include: __dirname + 'src',
         loader: 'babel-loader'
+      },
+      {
+        test: /\.css$/,
+        // css-loader 处理css文件
+        // style-loader 创建style标签插入index.html
+        loader: 'style-loader!css-loader'
       }
     ]
   },
