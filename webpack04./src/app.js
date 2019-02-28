@@ -1,6 +1,6 @@
 // import layer from './components/layer/layer.js'
-let a = 'nihao'
 function app() {
-  console.log(a);
+  // console.log(layer)
+  console.log('1111')
 }
 app();
