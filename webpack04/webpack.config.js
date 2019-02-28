@@ -7,12 +7,14 @@ module.exports = {
     path: path.resolve('./dist')
   },
   module: {
-    loaders: [
+    rules: [
       {
-        test: /\.js/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['lastest']
+        test: /\.js$/, 
+        exclude: __dirname + 'node_modules', 
+        include: __dirname + 'src', 
+        loader: "babel-loader",
+        options: {
+          presets: ['env']
         }
       }
     ]
