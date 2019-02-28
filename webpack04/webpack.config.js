@@ -7,13 +7,12 @@ module.exports = {
     path: path.resolve('./dist')
   },
   module: {
-    loaders: [
+    rules: [
       {
-        test: /\.js/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['lastest']
-        }
+        test:/\.js$/,
+        use: 'babel-loader',
+        include: /src/,          // 只转化src目录下的js
+        exclude: /node_modules/  // 排除掉node_modules，优化打包速度
       }
     ]
   },
