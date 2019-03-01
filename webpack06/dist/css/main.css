@@ -1,0 +1,8 @@
+.box {
+  height: 100px;
+  width: 100px;
+  background: red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
