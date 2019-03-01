@@ -22,6 +22,7 @@ module.exports = {
         // css-loader 处理css文件
         // style-loader 创建style标签插入index.html
         // postcss-loader 给类似flex等样式加前缀；
+        // MiniCssExtractPlugin 插件 插入index.html里
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader', 'postcss-loader'
@@ -35,6 +36,7 @@ module.exports = {
       template: 'index.html',
       inject: 'body'
     }),
+    // 在输出目录下生成css文件；
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
