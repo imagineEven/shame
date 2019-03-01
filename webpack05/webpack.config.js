@@ -25,7 +25,14 @@ module.exports = {
         // MiniCssExtractPlugin 插件 插入index.html里
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader', 'postcss-loader'
+          {
+            loader: 'css-loader',
+            options: {
+              // 给@import引入的css文件加前缀
+              importLoaders: 10, // 0 => no loaders (default); 1 => postcss-loader; 2 => postcss-loader, sass-loader
+            }
+          },
+          'postcss-loader'
         ]
       }
     ]
