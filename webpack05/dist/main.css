@@ -11,5 +11,6 @@ html , body {
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
