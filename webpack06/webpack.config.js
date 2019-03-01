@@ -28,6 +28,18 @@ module.exports = {
           },
           'postcss-loader'
         ]
+      },
+      {
+        test: /\.less$/,
+        exclude: __dirname + 'node_modules',
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader'
+          },
+          'postcss-loader',
+          'less-loader'
+        ]
       }
     ]
   },

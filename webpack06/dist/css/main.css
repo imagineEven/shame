@@ -1,3 +1,8 @@
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 .box {
   height: 100px;
   width: 100px;
