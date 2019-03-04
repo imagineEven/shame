@@ -9,7 +9,10 @@ module.exports = {
     filename: 'js/build.js'
   },
   devServer: {
-    
+    contentBase: path.join(__dirname, 'dist'),
+    port: 9290,
+    open: true,
+    hot: true
   },
   module: {
   },
