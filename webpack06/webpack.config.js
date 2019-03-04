@@ -1,10 +1,11 @@
 let path = require('path');
 let htmlWebpackPlugin = require('html-webpack-plugin');
+let webpack = require('webpack');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
   entry: './src/app.js',
   output: {
-    filename: 'js/[name]-[chunkhash].js',
+    filename: 'js/Even.js',
     path: path.resolve('./dist')
   },
   module: {
@@ -43,6 +44,12 @@ module.exports = {
       }
     ]
   },
+  devServer: {
+    contentBase: './dist',
+    hot: true,
+    port: 9092,
+    open: true
+  },
   plugins: [
     new htmlWebpackPlugin({
       filename: 'index.html',
@@ -51,6 +58,7 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: 'css/[name].css'
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin()
   ]
 }
