@@ -1,0 +1,7 @@
+@import './component.less';
+#app {
+  height: 500px;
+  width: 500px;
+  background: red;
+  display: flex;
+}
