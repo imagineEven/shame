@@ -2,6 +2,10 @@
 #app {
   height: 500px;
   width: 500px;
-  background: red;
   display: flex;
+  background: red;
+}
+.nihao {
+  height: 200px;
+  width: 200px;
 }
