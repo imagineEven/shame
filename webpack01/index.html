@@ -28,7 +28,6 @@
       doc.designMode = "on";
       doc.contentEditable = true;
       doc.write('<html><head><style>body{ margin:3px; word-wrap:break-word; word-break: break-all; }</style></head><body style="font-size: 24px">GoodNessEditor</body></html>');
-      // alert(doc.body.innerHTML);
   }
 
 
@@ -54,23 +53,12 @@
   //设置选定的文本为粗体/正常
   function setBold() {
       var value = document.getElementById("input").value
-      // var editor = document.getElementById("editor");
-      // var inner = '<div style="font-size: 36px"> nihao </div>'
-      // editor.srcdoc = inner;
       var win = document.getElementById("editor").contentWindow;
       win.document.execCommand("Bold", false, null);
-      // console.log(win.document);
-      // console.log(win.document.body);
-      // console.log(win.document.body.textContent);
-      // console.log(win.document.body.innerHTML);
       var text = win.document.body.innerHTML;
       var json = createTextArr(text);
       var editor = document.getElementById("editor");
       editor.srcdoc = json;
-      
-      // console.log(textArr);
-      // console.log(document.getElementById("editor"));
-      // win.document.execCommand('fontSize', false, Number(value));
       win.focus();
   }
 </script>
