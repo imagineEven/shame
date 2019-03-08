@@ -58,20 +58,21 @@ module.exports = {
           }
         }
       },
+      // {
+      //   test: /\.(png|jpg|gif)$/,
+      //   use: {
+      //     loader: 'url-loader',
+      //     options: {
+      //       limit: 2000
+      //     }
+      //   }
+      // },
       {
-        test: /\.(png|jpg|gif)$/,
-        use: {
-          loader: 'url-loader',
-          options: {
-            limit: 2000
-          }
-        }
-      },
-      {
-        test: /\.(png|jpg|gif)$/,
+        test: /\.(png|jpg|gif|svg)$/i,
         use: {
           loader: 'file-loader',
           options: {
+            outputPath: 'images'
           }
         }
       }

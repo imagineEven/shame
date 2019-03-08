@@ -3,7 +3,7 @@
   height: 500px;
   width: 500px;
   display: flex;
-  background: red;
+  background: url('../assets/even.png');
 }
 .nihao {
   height: 200px;
