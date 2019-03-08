@@ -15,6 +15,20 @@
   <h1>webpack.config.js [hash] [name]</h1>
   <h1>html-webpack-plugins</h1>
   <h1>html-webpack-plugins => minify的配置</h1>
+  <!-- <iframe src="http://www.w3school.com.cn/tiy/t.asp?f=html_iframe_height" frameborder="1"></iframe> -->
 </body>
+<script>
 
+  let ifram = document.createElement('ifram');
+  console.log(ifram)
+  console.log(document.body)
+  ifram.frameborder = 1;
+  ifram.style.height = '500px';
+  ifram.style.width = '500px';
+  ifram.src = "http://www.w3school.com.cn/tiy/t.asp?f=html_iframe_height";
+  alert(111);
+  setTimeout(() => {
+    document.body.appendChild(ifram);
+  }, 1000)
+  </script>
 </html>

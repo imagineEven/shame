@@ -9,7 +9,7 @@ module.exports = {
     // 相对于dist目录下的js文件
     filename: 'js/[name]-[chunkhash].js',
     // 指定src引入的地址；
-    publicPath: 'http://cdn.com/'
+    // publicPath: 'http://cdn.com/'
   },
   plugins: [
     new htmlWebpackPlugins({
