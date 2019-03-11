@@ -27,7 +27,14 @@ module.exports = {
         test: /\.(css|less)$/,
         exclude: __dirname + 'node_modules',
         use: [
-          MiniCssExtractPlugin.loader,
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              // you can specify a publicPath here
+              // by default it use publicPath in webpackOptions.output
+              // publicPath: './css'
+            }
+          },
           {
             loader: 'css-loader',
             options: {
@@ -60,7 +67,7 @@ module.exports = {
         use: {
           loader: 'file-loader',
           options: {
-            outputPath: 'images'
+            outputPath: './assets'
           }
         }
       }
@@ -73,7 +80,7 @@ module.exports = {
       inject: 'body'
     }),
     new MiniCssExtractPlugin({
-      filename: 'css/[name].css'
+      filename: '[name].css'
     }),
     new webpack.HotModuleReplacementPlugin()
   ]
