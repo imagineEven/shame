@@ -24,7 +24,7 @@ module.exports = {
         loader: 'babel-loader'
       },
       {
-        test: /\.css$/,
+        test: /\.(css|less)$/,
         exclude: __dirname + 'node_modules',
         use: [
           MiniCssExtractPlugin.loader,
@@ -35,18 +35,6 @@ module.exports = {
             }
           },
           'postcss-loader'
-        ]
-      },
-      {
-        test: /\.less$/,
-        exclude: __dirname + 'node_modules',
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader'
-          },
-          'postcss-loader',
-          'less-loader'
         ]
       },
       {
