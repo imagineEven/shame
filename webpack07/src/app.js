@@ -16,7 +16,17 @@ app();
 let appDom = document.querySelector('#app');
 appDom.innerHTML = dom;
 
+toMoney(121231321.123)
 
+function toMoney(num){
+  num = num.toFixed(2);
+  console.log(num);
+  num = parseFloat(num)
+  console.log(num);
+  num = num.toLocaleString();
+  console.log(num);
+  return num;//返回的是字符串23,245.12保留2位小数
+}
 
 // necessary;
 // function fun(n, o) {
