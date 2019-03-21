@@ -1,8 +1,14 @@
-import HtmlScroll from './scroll.html';
+// import HtmlScroll from './scroll.html';
 import BaseLogic from '../../plugin/BaseLogic';
-class scroll extends BaseLogic{
+class Scroll extends BaseLogic{
   constructor() {
-    super();
+    super('?');
     console.log('this is a page of the scrolled');
   }
 }
+
+
+export default {
+  Scroll
+}
+

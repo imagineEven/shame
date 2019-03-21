@@ -3,10 +3,11 @@ let path = require('path');
 let htmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-let definePlugin = new webpack.DefinePlugin({
+// let definePlugin = new webpack.DefinePlugin({
   // __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'true')),
-  optionsType: JSON.stringify(6)
-});
+  // optionsType: JSON.stringify(6)
+  // process.env.nihao : 'this is the page'
+// });
 
 module.exports = {
   entry: './src/app.js',
