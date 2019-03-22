@@ -1,8 +1,8 @@
 import $ from 'jquery';
 class BaseLogic {
-  constructor(value) {
-    console.log(value);
-    this.toggleScene(true);
+  constructor() {
+    // this.toggleScene(true);
+    console.log('baseLogic 里面的内容已经执行了');
   }
 
   toggleScene(power) {
@@ -23,3 +23,8 @@ class BaseLogic {
     }
   }
 }
+
+export  {
+  BaseLogic
+}
+
