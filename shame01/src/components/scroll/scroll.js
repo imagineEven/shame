@@ -1,18 +1,13 @@
 import HtmlScroll from './scroll.html';
 import { BaseLogic } from '../../plugin/BaseLogic.js';
-let nihao = require('../../plugin/BaseLogic.js');
-// console.log('nihao', nihao);
-// console.log(baseLogic);
-// console.log(BaseLogic);
-class Scroll extends BaseLogic {
+class Scroll {
   constructor() {
-    super();
-    // console.log('this is a page of the scrolled');
+    console.log('---------------------scroll');
   }
 }
 
 
-export default {
+export {
   Scroll
 }
 
