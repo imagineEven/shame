@@ -1,4 +1,5 @@
 import height from './otherModule';
+import { BaseLogic } from '../../plugin/BaseLogic';
 // import
 // 引入的变量都是可读的，不允许改写接口，可以改写接口变量；
 // example: var height = 23; 报错；
@@ -12,8 +13,9 @@ console.log('height', height)
 // import { nihao } from './otherModule'
 // console.log('variable', nihao)
 
-class Es6Module{
+class Es6Module extends BaseLogic {
   constructor() {
+    super()
     console.log('----------------下面是es6模块化');
   }
 }

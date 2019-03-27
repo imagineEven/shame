@@ -1,25 +1,29 @@
 import $ from 'jquery';
 class BaseLogic {
   constructor() {
-    // this.toggleScene(true);
-    console.log('baseLogic 里面的内容已经执行了');
+    this.createBack();
+    this.toggleScene(true);
+  }
+
+  createBack() {
+    let back = $('<div class="back">back</div>');
+    let backNode = back.get(0);
+    document.body.appendChild(backNode);
+    let self = this;
+    backNode.onclick = function() {
+      self.toggleScene(false);
+    }
   }
 
   toggleScene(power) {
     if (power) {
-      $('#list').css({
-        display: 'none'
-      });
-      $('#app').css({
-        display: 'auto'
-      })
+      $('#list').hide();
+      $('#app').show();
+      $('.back').show();
     } else {
-      $('#list').css({
-        display: 'auto'
-      });
-      $('#app').css({
-        display: 'none'
-      })
+      $('#list').show();
+      $('#app').hide();
+      $('.back').hide();
     }
   }
 }
