@@ -2,9 +2,10 @@ import { Scroll } from './scroll/scroll.js';
 import { CommonJs } from './commonJS/commonJS.js';
 import { Object } from './object/object.js';
 import { Es6Module } from './es6Module/es6Module.js';
+import { Iterator } from './Iterator/Iterator.js'
 import $ from 'jquery';
 
-let list = ['Scroll', 'CommonJs', 'Object', 'Es6Module'];
+let list = ['Scroll', 'CommonJs', 'Object', 'Es6Module', 'Iterator'];
 list.forEach((element, index) => {
   let scopeElement = element
   let div = $(`<div class="${element} option" >${element}</div>`).css({
@@ -31,6 +32,9 @@ function domClike(event) {
       break;
     case 'Es6Module':
       new Es6Module();
+      break;
+    case 'Iterator':
+      new Iterator();
       break;
       default:
       console.log(111);
