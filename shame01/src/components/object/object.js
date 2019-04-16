@@ -8,10 +8,18 @@ class Object extends BaseLogic{
     this.createUI();
   }
   createUI() {   
-    let nihao = "\"wo%20shi%20yi%20ge%20dou%20hao%2C%20wo%20hai%20hsi";
-    // 返回的是符合要求的字符串
-    let haha = decodeURIComponent(nihao)
-    console.log('haha', haha);
+    let optimize = new Map();
+    optimize.set('one', 'oneText');
+    optimize.set('two', 'twoText');
+    // size mean has two key of value;
+    // 有俩个键值对;
+    console.log('optimize.size', optimize.size);
+    // console.log(optimize.has('one'));
+    // console.log(optimize.get('one'));
+    // optimize.forEach((map, key) => {
+    //   console.log('map', map);
+    //   console.log('key', key);
+    // })
   }
 }
 

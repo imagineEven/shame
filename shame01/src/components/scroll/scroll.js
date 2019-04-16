@@ -16,7 +16,7 @@ class Scroll extends BaseLogic {
 
   }
 
-
+// asdfgggghjjkl;
   convertWordOther(sentenceArr) {
     sentenceArr.forEach(element => {
       let text = element.text;
