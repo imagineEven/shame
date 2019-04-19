@@ -23,6 +23,7 @@ class BaseLogic {
     } else {
       $('#list').show();
       $('#app').hide();
+      $('#app > div').remove();
       $('.back').hide();
     }
   }

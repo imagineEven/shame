@@ -9,7 +9,7 @@ import { BaseLogic } from '../../plugin/BaseLogic';
 // variable += 1
 // age += 1
 // let age = age + 1;
-console.log('height', height)
+// console.log('height', height)
 // import { nihao } from './otherModule'
 // console.log('variable', nihao)
 
