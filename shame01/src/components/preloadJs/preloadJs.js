@@ -9,11 +9,12 @@ class PreloadJs extends BaseLogic {
     this.createPreload()
   }
   createUI() {
-    $('#app').append(innerHTML);
+    // $('#app').append(innerHTML);
+    let factor = new Factor();
   }
   createPreload() {
     // 预加载网址： https://loading.io/
-    console.log('document.readyState', document.readyState);
+    // console.log('document.readyState', document.readyState);
     // 因为是后续执行 所以不会监听到statechange变化；
     document.onreadystatechange = function() {
       console.log(document.readyState)
@@ -23,6 +24,24 @@ class PreloadJs extends BaseLogic {
     }
   }
 }
+
+class Fact {
+  constructor() {
+    this.name = 'Fact';
+    this.getName();
+  }
+
+  getName() {
+    console.log('this', this)
+  }
+}
+class Factor extends Fact {
+  constructor() {
+    super();
+    this.age = 'Factor'
+  }
+}
+
 
 export {
   PreloadJs

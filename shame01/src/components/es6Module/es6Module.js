@@ -17,8 +17,9 @@ class Es6Module extends BaseLogic {
   constructor() {
     super()
     console.log('----------------下面是es6模块化');
-    // this.gate();
-    this.createUI();
+    this.gate();
+    // this.createUI();
+    // this.testPromise();
   }
 
   createUI() {
@@ -36,18 +37,21 @@ class Es6Module extends BaseLogic {
   }
 
   async gate() {
-    // 等待Promise;
-    let nihao = await this.navigate();
-    console.log(nihao);
+    // 等待Promise; 必须把Promise return出来； 
+    console.log('start');
+    // 必须碰到fullfill 状态下的promise才会向下执行；
+    await this.navigate();
+    // console.log(nihao);
     console.log('我是什么时候执行的？');
   }
 
   navigate() {
-    return new Promise(resolve => {
+    return new Promise((resolve,reject) => {
       setTimeout(() => {
-        console.log('this is the navigation');
-        resolve(11111);
-      }, 2000);
+        // resolve(11111);
+        // return 111;
+        reject(111);
+      }, 800);
     })
   }
 }
