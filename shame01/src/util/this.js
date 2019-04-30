@@ -22,5 +22,33 @@ console.log('------------------------')
  */
 
 
+// this 是可变的；
+// 看到this 找他的函数体是谁调用的；
+class Factor {
+  constructor() {
+    this.age = 'Factor';
+    this.number = 15;
+    let engine = new Engine();
+    let address = '佳木斯';
+    engine.getName(function() {
+      console.log(this.age);
+    }, this);
+  }
+
+}
+
+class Engine {
+  constructor() {
+    this.name = 'engine';
+  }
+
+  getName(callback, that) {
+    that.callback = callback;
+    that.callback();
+  }
+}
+
+let factor = new Factor();
+
 
 console.log('------------------------')

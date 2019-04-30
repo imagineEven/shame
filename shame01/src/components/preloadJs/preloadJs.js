@@ -10,7 +10,7 @@ class PreloadJs extends BaseLogic {
   }
   createUI() {
     // $('#app').append(innerHTML);
-    let factor = new Factor();
+
   }
   createPreload() {
     // 预加载网址： https://loading.io/
@@ -25,22 +25,8 @@ class PreloadJs extends BaseLogic {
   }
 }
 
-class Fact {
-  constructor() {
-    this.name = 'Fact';
-    this.getName();
-  }
 
-  getName() {
-    console.log('this', this)
-  }
-}
-class Factor extends Fact {
-  constructor() {
-    super();
-    this.age = 'Factor'
-  }
-}
+
 
 
 export {
