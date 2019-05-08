@@ -7,19 +7,20 @@ class Object extends BaseLogic{
     console.log('------------------下面是object.js');
     this.createUI();
   }
-  createUI() {   
-    let optimize = new Map();
-    optimize.set('one', 'oneText');
-    optimize.set('two', 'twoText');
-    // size mean has two key of value;
-    // 有俩个键值对;
-    console.log('optimize.size', optimize.size);
-    // console.log(optimize.has('one'));
-    // console.log(optimize.get('one'));
-    // optimize.forEach((map, key) => {
-    //   console.log('map', map);
-    //   console.log('key', key);
-    // })
+  createUI() {
+    // 正常对象里面的get set 方法；
+    let observe = {
+      name: 'even',
+      $name: 'even',
+      get name () {
+        return this.$name
+      },
+      set name(value) {
+        this.$name = value;
+      }
+    }
+    observe.name = 'haha';
+    console.log(observe.name);
   }
 }
 
