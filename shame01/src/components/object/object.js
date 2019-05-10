@@ -7,14 +7,22 @@ class Objectone extends BaseLogic{
     console.log('------------------下面是object.js');
     this.originObject();
     this.property();
-    // 下面定义一个自存档对象
-    this.fineValueArr = [];
+    this.proxy();
   }
 
-  fine(value) {
-    
+  proxy() {
+    let obj = {
+      name: 'even'
+    }
+    // 代理属于浅拷贝；
+    let p = new Proxy(obj, {
+      getPrototypeOf(target) {
+        console.log('target', target);
+      }
+    })
+    obj.name = 'levi'
+    console.log('name', p.name);
   }
-
 
   originObject() {
     // 正常对象里面的get set 方法；
