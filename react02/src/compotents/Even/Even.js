@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { TodoItem } from './todoItem';
 // 定义组件；
 function EvenOne() {
   return (
@@ -60,7 +60,7 @@ class EvenTwo extends React.Component {
         <button onClick={this.handleClickButton.bind(this)}>add</button>
         <ul>
           {this.state.list.map((item, index) => {
-            return <li key={index} onClick={this.deletOption.bind(this, index)}>{item}</li>;
+            return <TodoItem key={index} content={item} index={index} delete={this.deletOption.bind(this, index)}/>;
           })}
         </ul>
       </div>
