@@ -17,6 +17,45 @@ class EvenTwo extends React.Component {
       inputValue: ''
     };
   }
+  // 组件的生命周期；
+
+  // 组件将要挂载
+  componentWillMount() {
+    console.log('conponentWillMount', '组件即将挂载');
+  }
+
+
+  // 提供组件显示的内容；提供需要渲染的dom;
+  render() {
+    // 不会同步页面；why? 这里的状态不会做任何的监听
+    console.log('我是Even里的render？');
+    return (
+      // jsx 里面只能写表达式，不能写语句列如 {if(true) {return 234}}
+      // 但是语句里面可以写标签；
+      <React.Fragment>
+        <input value={this.state.inputValue} onChange={this.clickChangeInput.bind(this)}/>
+        <button style={{background: 'yellow'}} className='red-btn' onClick={this.handleClickButton.bind(this)}>add</button>
+        <button style={{height:'30px', width: '100px'}} onClick={this.clickTest.bind(this)}></button>
+        <ul>
+          {this.state.list.map((item, index) => {
+            // 循环将会执行循环次数的组件生命周期；
+            return <TodoItem key={index} content={item} index={index} delete={this.deletOption.bind(this, index)}/>;
+          })}
+        </ul>
+      </React.Fragment>
+    );
+  }
+
+  // 组件已经挂载完成
+  componentDidMount() {
+    console.log('compomentDisMount', '挂载完成');
+  }
+
+  clickTest() {
+    this.setState({
+      'list': [...this.state.list]
+    });
+  }
 
   handleClickButton() {
     // 出发update流程；改变视图
@@ -31,7 +70,6 @@ class EvenTwo extends React.Component {
     // this.setState((prevState, props) => {
     //   return { 'list': [...prevState.list, 'hello world'] };
     // });
-
   }
 
   clickChangeInput(e) {
@@ -46,25 +84,6 @@ class EvenTwo extends React.Component {
     this.setState({
       'list': newArr
     });
-  }
-
-  // 提供组件显示的内容；提供需要渲染的dom;
-  render() {
-    // 不会同步页面；why? 这里的状态不会做任何的监听
-    this.arr = [123, 123, 123];
-    return (
-      // jsx 里面只能写表达式，不能写语句列如 {if(true) {return 234}}
-      // 但是语句里面可以写标签；
-      <div>
-        <input value={this.state.inputValue} onChange={this.clickChangeInput.bind(this)}/>
-        <button onClick={this.handleClickButton.bind(this)}>add</button>
-        <ul>
-          {this.state.list.map((item, index) => {
-            return <TodoItem key={index} content={item} index={index} delete={this.deletOption.bind(this, index)}/>;
-          })}
-        </ul>
-      </div>
-    );
   }
 }
 
