@@ -8,7 +8,7 @@ class TodoItem extends React.Component {
     // 为什么总是 undefined;
     // console.log('nextProps', nextProps);
     // console.log('nextProps.someThings', nextProps.someThings);
-    console.log('111111', nextProps, nextState, this.props);
+    // console.log('111111', nextProps, nextState, this.props);
     if(nextProps.someThings === this.props.someThings){
       return false;
     }

@@ -21,9 +21,15 @@ class EvenTwo extends React.Component {
 
   // 组件将要挂载
   componentWillMount() {
-    console.log('conponentWillMount', '组件即将挂载');
   }
 
+  componentWillUpdate() {
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log('shouldComponentupdate', nextProps, nextState);
+    return true;
+  }
 
   // 提供组件显示的内容；提供需要渲染的dom;
   render() {

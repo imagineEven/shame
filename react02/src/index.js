@@ -12,7 +12,7 @@ import * as serviceWorker from './serviceWorker';
 // 将虚拟dom 插入节点；
 // <EvenTwo /> 为jsx标签；自定义便签名字；
 // jsx作用, 将类转换成虚拟dom;
-ReactDOM.render(<EvenTwo />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
