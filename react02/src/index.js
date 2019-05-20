@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { HashRouter, Route, Switch, Link } from 'react-router-dom';
 // 全局样式， 格式化样式；
 import './index.css';
 
@@ -12,7 +13,14 @@ import * as serviceWorker from './serviceWorker';
 // 将虚拟dom 插入节点；
 // <EvenTwo /> 为jsx标签；自定义便签名字；
 // jsx作用, 将类转换成虚拟dom;
-ReactDOM.render(<App/>, document.getElementById('root'));
+ReactDOM.render((
+  <HashRouter>
+    <Switch>
+      <Route path="/" component={App}>
+      </Route>
+    </Switch>
+  </HashRouter>
+), document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
