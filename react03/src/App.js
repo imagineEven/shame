@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import { Layout, Menu, Icon, Breadcrumb, Radio, Modal, Dropdown, Button, Input, Form, message } from 'antd';
 
-
 const { Header, Sider, Content, Footer } = Layout;
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
@@ -18,13 +17,27 @@ class App extends React.Component {
     this.setState({ collapsed });
   };
 
+  handleOpenChange = key => {
+    console.log('key', key);
+  }
+  
+  handleMenuSelect = (e) => {
+    console.log('e', e);
+  }
+
   render() {
     return (
       <div className="appwrapper">
         <Layout style={{ minHeight: '100vh' }}>
           <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
             <div className="logo" />
-            <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
+
+            <Menu theme="dark"
+              defaultSelectedKeys={['sub2', 'sub1']}
+              defaultOpenKeys={['sub1', 'sub2']}
+              onOpenChange={this.handleOpenChange}
+              onClick={this.handleMenuSelect}
+              mode="inline">
               <Menu.Item key="1">
                 <Icon type="pie-chart" />
                 <span>Option 1</span>
@@ -63,6 +76,7 @@ class App extends React.Component {
                 <span>File</span>
               </Menu.Item>
             </Menu>
+
           </Sider>
           <Layout>
             <Header style={{ background: '#fff', padding: 0 }} />
