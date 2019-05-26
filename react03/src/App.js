@@ -37,11 +37,24 @@ let routers = {
   ]
 };
 
+
 class App extends React.Component {
   state = {
     collapsed: window.innerWidth <= 768 ? true : false,
-    isShowFragmentSubMenu: false
+    isShowFragmentSubMenu: false,
+    name: 'even'
   };
+
+  componentWillMount() {
+    let { history } = this.props;
+    // history.push('./FragmentMenuItem');
+    history.push({
+      pathname: '/FragmentMenuItem',
+      query: {
+        EKey: 'what'
+      }
+    });
+  }
 
   onCollapse = collapsed => {
     console.log('collapsed', collapsed);
@@ -56,20 +69,39 @@ class App extends React.Component {
   handleMenuSelect = (e) => {
     console.log('e.key', e);
     console.log('this.props', this.props);
-    // 区分是一级菜单还是二级菜单;
+    const { history } = this.props;
+    console.log('history', history);
+    this.setState({
+      'name': 'Levi'
+    });
+    // 区分是一级菜单还是二级菜单; 这个是组件的方法；
     if (e.keyPath.length > 1) {
       console.log('> 1');
-      this.setState({
-        'isShowFragmentSubMenu': true
+      // this.setState({
+      //   'isShowFragmentSubMenu': true
+      // });
+      // history.push('/FragmentSubMenu');
+      history.push({
+        pathname: '/FragmentSubMenu',
+        query: {
+          EKey: '/FragmentSubMenu' + e.key
+        }
       });
     } else {
       console.log('!> 1');
-      this.setState({
-        'isShowFragmentSubMenu': false
+      // this.setState({
+      //   'isShowFragmentSubMenu': false
+      // });
+      // history.push('/FragmentMenuItem');
+      history.push({
+        pathname: '/FragmentMenuItem',
+        query: {
+          EKey: e.key
+        }
       });
     }
-    const { history } = this.props;
-    history.push(e.key);
+    // const { history } = this.props;
+    // history.push(e.key);
   }
 
   render() {
@@ -119,9 +151,8 @@ class App extends React.Component {
               }
             </Menu>
           </Sider>
-          {
-            this.isShowFragmentSubMenu ? <FragmentSubMenu /> : <FragmentMenuItem />
-          }
+          <Route path="/FragmentSubMenu" component={FragmentSubMenu}></Route>
+          <Route path="/FragmentMenuItem" component={FragmentMenuItem}></Route>
         </Layout>
       </div>
     );
@@ -129,6 +160,30 @@ class App extends React.Component {
 }
 
 class FragmentSubMenu extends React.Component {
+
+  componentDidMount() {
+    // 在这里做路由切换的逻辑；
+    // console.log('this.componentWillMount');
+    // console.log('this.history', this.props.history);
+    // console.log('this', this);
+    // console.log('this.props', this.props);
+    // console.log(this.props.location);
+    console.log('this.props.location.query.EKey', this.props.location.query.EKey);
+    
+    this.props.history.push({
+      pathname: this.props.location.query.EKey
+    });
+  }
+
+  // shouldComponentUpdate() {
+  //   console.log('shouldComponentUpdate');
+  //   return true;
+  // }
+
+  // componentWillReceiveProps() {
+  //   console.log('componentWillReceiveProps');
+  // }
+
   render() {
     return (
       <React.Fragment>
