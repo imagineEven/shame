@@ -24,6 +24,7 @@ export default {
 @red: red;
 .helloWrapper {
   .content {
+    width: 750px;
     background: @red;
   }
 }
