@@ -18,7 +18,7 @@ let routers = {
       children: [
         { path: '/Bill', icon: 'reload', component: Bill },
         { path: '/Alex', icon: 'number', component: Alex },
-        { path: '/Tom', icon: 'search', component: Tom }
+        { path: '/FragmentSubMenu/Tom', icon: 'search', component: Tom }
       ]
     },
     {
@@ -41,19 +41,19 @@ let routers = {
 class App extends React.Component {
   state = {
     collapsed: window.innerWidth <= 768 ? true : false,
-    isShowFragmentSubMenu: false,
+    currentPath: '',
     name: 'even'
   };
 
   componentWillMount() {
     let { history } = this.props;
     // history.push('./FragmentMenuItem');
-    history.push({
-      pathname: '/FragmentMenuItem',
-      query: {
-        EKey: 'what'
-      }
-    });
+    // history.push({
+    //   pathname: '/FragmentSubMenu',
+    //   query: {
+    //     EKey: 'what'
+    //   }
+    // });
   }
 
   onCollapse = collapsed => {
@@ -71,9 +71,9 @@ class App extends React.Component {
     console.log('this.props', this.props);
     const { history } = this.props;
     console.log('history', history);
-    this.setState({
-      'name': 'Levi'
-    });
+    // this.setState({
+    //   'name': 'Levi'
+    // });
     // 区分是一级菜单还是二级菜单; 这个是组件的方法；
     if (e.keyPath.length > 1) {
       console.log('> 1');
@@ -151,8 +151,8 @@ class App extends React.Component {
               }
             </Menu>
           </Sider>
-          <Route path="/FragmentSubMenu" component={FragmentSubMenu}></Route>
           <Route path="/FragmentMenuItem" component={FragmentMenuItem}></Route>
+          <Route path="/FragmentSubMenu" component={FragmentSubMenu}></Route>
         </Layout>
       </div>
     );
@@ -168,7 +168,7 @@ class FragmentSubMenu extends React.Component {
     // console.log('this', this);
     // console.log('this.props', this.props);
     // console.log(this.props.location);
-    console.log('this.props.location.query.EKey', this.props.location.query.EKey);
+    // console.log('this.props.location.query.EKey', this.props.location.query.EKey);
     
     this.props.history.push({
       pathname: this.props.location.query.EKey
@@ -198,7 +198,7 @@ class FragmentSubMenu extends React.Component {
               {
                 routers.SubMenu.map((SubMenu, index) => (
                   SubMenu.children.map((child, index) => (
-                    <Route path={child.path} key={index} component={child.component}></Route>
+                    <Route path={'/FragmentSubMenu' + child.path} key={index} component={child.component}></Route>
                   ))
                   // <Route path={item.path} key={index} component={item.component}></Route>
                 ))
