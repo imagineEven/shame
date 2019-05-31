@@ -12,6 +12,7 @@
 
 <script>
 import Children from './children.vue'
+
 export default {
   data () {
     return {
