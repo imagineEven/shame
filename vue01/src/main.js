@@ -14,29 +14,3 @@ new Vue({
   components: { App },
   template: '<App/>'
 });
-
-
-// content = {};
-// console.log('content', content);
-
-class Father {
-  constructor() {
-    console.log('Father');
-    this.name = 'even';
-  }
-}
-
-class Child extends Father{
-  constructor() {
-    super();
-    console.log('Child');
-    // console.log(super);
-    this.createUI();
-  }
-
-  createUI() {
-    // console.log('super', super);
-  }
-}
-
-let child = new Child();
