@@ -16,7 +16,7 @@ module.exports = {
     hot: true
   },
   module: {
-    rules: [
+    rules: [ 
       {
         test: /\.js$/,
         exclude: __dirname + 'node_modules',
